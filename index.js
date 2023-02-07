@@ -28,3 +28,24 @@ console.log(number1, number2); // 10 30
 const arr2 = [10, 20, 30, 40, 50, 60];
 let [firstNum, secNum, ...arr3] = arr2;
 console.log(firstNum, secNum, arr3); //10 20 (4) [30, 40, 50, 60]
+// object to array insertion
+const arr4 = [];
+const obj1 = { fName: "Lakshman", lName: "Prabas", regNo: "R3147" };
+({ fName: arr4[0], lName: arr4[1], regNo: arr4[2] } = obj1);
+console.log(arr4); // (3) ['Lakshman', 'Prabas', 'R3147']
+
+let str1 = "first";
+let str2 = "second";
+console.log(str1, str2); // first second
+// value swapping with temp variable
+let temp = str1;
+str1 = str2;
+str2 = temp;
+console.log(str1, str2); // second first
+
+let first = "one";
+let sec = "two";
+console.log(first, sec); // one two
+//value swapping with destructuring
+[first, sec]=[sec, first];
+console.log(first, sec); // two one
