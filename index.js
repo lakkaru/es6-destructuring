@@ -47,21 +47,32 @@ let first = "one";
 let sec = "two";
 console.log(first, sec); // one two
 //value swapping with destructuring
-[first, sec]=[sec, first];
+[first, sec] = [sec, first];
 console.log(first, sec); // two one
 
 //array element swapping
-const arr5=["A", "B", "C", "D"];
+const arr5 = ["A", "B", "C", "D"];
 console.log(arr5); //(4) ['A', 'B', 'C', 'D']
 
 //with temp variables
-let a=arr5[0];
-let c=arr5[2];
-arr5[0]=c;
-arr5[2]=a;
+let a = arr5[0];
+let c = arr5[2];
+arr5[0] = c;
+arr5[2] = a;
 console.log(arr5); // (4) ['C', 'B', 'A', 'D']
 //with destructuring
-const arr6=["a", "b", "c", "d"];
+const arr6 = ["a", "b", "c", "d"];
 console.log(arr6); //(4) ['a', 'b', 'c', 'd']
-[arr6[0]]=[arr6[2]];
-console.log(arr6); //(4) ['c', 'b', 'c', 'd']
+[arr6[0], arr6[2]] = [arr6[2], arr6[0]];
+console.log(arr6); //(4) ['c', 'b', 'a', 'd']
+
+//default value assigning
+const arr7 = ["10", "20", "30"];
+console.log(arr7); // 10 20 30 Forty
+let [ten, twenty = "Twenty", thirty = "Thirty", forty = "Forty"] = arr7;
+console.log(ten, twenty, thirty, forty); // 10 20 30 Forty
+const obj2 = { A: "1", B: "2" };
+let { A, B = "two", C = "three", D: d = "four" } = obj2;
+console.log(A, B, C, d); // 1 2 three four
+
+
