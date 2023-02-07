@@ -49,3 +49,19 @@ console.log(first, sec); // one two
 //value swapping with destructuring
 [first, sec]=[sec, first];
 console.log(first, sec); // two one
+
+//array element swapping
+const arr5=["A", "B", "C", "D"];
+console.log(arr5); //(4) ['A', 'B', 'C', 'D']
+
+//with temp variables
+let a=arr5[0];
+let c=arr5[2];
+arr5[0]=c;
+arr5[2]=a;
+console.log(arr5); // (4) ['C', 'B', 'A', 'D']
+//with destructuring
+const arr6=["a", "b", "c", "d"];
+console.log(arr6); //(4) ['a', 'b', 'c', 'd']
+[arr6[0]]=[arr6[2]];
+console.log(arr6); //(4) ['c', 'b', 'c', 'd']
